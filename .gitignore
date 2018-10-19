@@ -13,3 +13,6 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+#Node modules
+node_modules
