@@ -14,6 +14,6 @@ client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 });
 
-bot_secret_token = "NTAyNzY3NTQwMzU5OTIxNjc0.DqvQMg.Eg_kNyryIYu7nDsmUycKjcKcQYc";
+bot_secret_token = "TOKEN";
 
 client.login(bot_secret_token);
