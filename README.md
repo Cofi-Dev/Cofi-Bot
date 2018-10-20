@@ -19,6 +19,7 @@ Move to working directory and install Discord.js :
 ```shell
 npm install discord.js 
 ```
+To start the bot just run `node launcher.js` in cmd.
 
 ## Linux / Ubuntu
 
@@ -27,4 +28,6 @@ Update your system package list and upgrade all your packages:
 ```shell
 sudo apt-get update 
 sudo apt-get dist-upgrade
+sudo apt-get install -y nodejs
 ```
+To start the bot just run `node launcher.js`
