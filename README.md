@@ -31,3 +31,11 @@ sudo apt-get dist-upgrade
 sudo apt-get install -y nodejs
 ```
 To start the bot just run `node launcher.js`
+
+Run in Linux or Windows:
+
+Need modify settings.json with personal token to host bot in your computer.
+
+```shell
+node launcher.js
+```

@@ -1,7 +1,8 @@
 try{
     var settings = require("./settings.json");
     var Discord = require('discord.js');
-    var client = new Discord.Client();    
+    var client = new Discord.Client();
+    var date = new Date();
 }catch(e){
     console.log(e.stack);
 	console.log(process.version);
@@ -17,11 +18,10 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === settings.prefix+'ping') {
-        // message.channel.send('pong :ping_pong:' + client.pings);
-        message.channel.send("```javascript\n  Ping:"+client.ping+" ms```");
+    if (message.content === settings.prefix+'pinga') {
+        message.channel.send(":ping_pong: "+parseInt(client.ping)+" ms");
     }else if(message.content === settings.prefix+'uptime'){
-        message.channel.send(client.readyAt);
+        // working in this shit 
     }
 });
 
