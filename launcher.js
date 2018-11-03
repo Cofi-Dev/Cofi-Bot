@@ -18,21 +18,13 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === settings.prefix+'ping') {
-        message.channel.send(":ping_pong: "+parseInt(client.ping)+" ms");
-    }else if(message.content === settings.prefix+'uptime'){
-        // Server on dates
-        var onDay = date.getHours();
-        var onDay = date.getMinutes();
-        var onDay = date.getMilliseconds();
+    if (message.content === settings.prefix + 'ping') {
+        message.channel.send(":ping_pong: " + parseInt(client.ping) + " ms");
+    } else if (message.content === settings.prefix + 'uptime') {
 
-        // Actual dates
-        var actDate = new Date();
-        var actDay = date.getHours();
-        var actDay = date.getMinutes();
-        var actDay = date.getMilliseconds();
+        var uptime = client.readyTimestamp;
+        message.channel.send(uptime);
 
-        
     }
 });
 
