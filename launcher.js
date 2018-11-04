@@ -22,8 +22,9 @@ client.on('message', message => {
         message.channel.send(":ping_pong: " + parseInt(client.ping) + " ms");
     } else if (message.content === settings.prefix + 'uptime') {
 
-        var uptime = client.readyTimestamp;
-        message.channel.send(uptime);
+        var uptime = client.readyTimestamp();
+        var creation = client.creation();
+        message.channel.send();
 
     }
 });
