@@ -2,7 +2,6 @@ try{
     var settings = require("./settings.json");
     var Discord = require('discord.js');
     var client = new Discord.Client();
-    var date = new Date();
 }catch(e){
     console.log(e.stack);
 	console.log(process.version);
@@ -18,14 +17,16 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === settings.prefix + 'ping') {
+    if (message.content === settings.prefix + "ping") {
         message.channel.send(":ping_pong: " + parseInt(client.ping) + " ms");
-    } else if (message.content === settings.prefix + 'uptime') {
+    } else if (message.content === settings.prefix + "uptime") {
+        let totalSeconds = (client.uptime / 1000);
+        let hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
 
-        var uptime = client.readyTimestamp();
-        var creation = client.creation();
-        message.channel.send();
-
+        message.channel.send(":timer: "+hours+" Hours "+minutes+" Minutes "+parseInt(seconds)+" Seconds");
     }
 });
 
