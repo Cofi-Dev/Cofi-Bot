@@ -19,7 +19,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === settings.prefix + "ping") {
         message.channel.send(":ping_pong: " + parseInt(client.ping) + " ms");
-    } else if (message.content === settings.prefix + "uptime") {
+    }else if(message.content === settings.prefix + "uptime") {
         let totalSeconds = (client.uptime / 1000);
         let hours = Math.floor(totalSeconds / 3600);
         totalSeconds %= 3600;
@@ -27,6 +27,10 @@ client.on('message', message => {
         let seconds = totalSeconds % 60;
 
         message.channel.send(":timer: "+hours+" Hours "+minutes+" Minutes "+parseInt(seconds)+" Seconds");
+    }else if(message.content === settings.prefix + "avatar"){
+        message.reply(message.author.avatarURL);
+    }else if(message.content === settings.prefix + "user"){
+        message.reply(client.user);
     }
 });
 
