@@ -1,0 +1,29 @@
+{
+  "name": "nam-bot",
+  "version": "1.0.0",
+  "description": "NaM-Bot is a multifunction chat bot for Discord based off discord.js",
+  "main": "app.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ffmpeg-binaries": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorst79/NaM-Bot.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot",
+    "Javascript"
+  ],
+  "author": "Victor Santaella",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorst79/NaM-Bot/issues"
+  },
+  "homepage": "https://github.com/victorst79/NaM-Bot#readme"
+}
