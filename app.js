@@ -13,12 +13,11 @@ console.log("Starting NaM-Bot\nNode version: " + process.version + "\nDiscord.js
 
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag);
-    console.log("- - - - - - - - - - - - - - - -");
 });
 
 client.on('message', message => {
     if (message.content === settings.prefix + "ping") {
-        message.channel.send(":ping_pong: " + parseInt(client.ping) + " ms");
+        message.channel.send("🏓" + parseInt(client.ping) + " ms");
     }else if(message.content === settings.prefix + "uptime") {
         let totalSeconds = (client.uptime / 1000);
         let hours = Math.floor(totalSeconds / 3600);
@@ -26,11 +25,13 @@ client.on('message', message => {
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = totalSeconds % 60;
 
-        message.channel.send(":timer: "+hours+" Hours "+minutes+" Minutes "+parseInt(seconds)+" Seconds");
+        message.channel.send(":timer: " + hours + " Hours " + minutes+ " Minutes " + parseInt(seconds) + " Seconds");
     }else if(message.content === settings.prefix + "avatar"){
         message.reply(message.author.avatarURL);
     }else if(message.content === settings.prefix + "user"){
         message.reply(client.user);
+    } else {
+    	message.reply("Unknown command");
     }
 });
 
