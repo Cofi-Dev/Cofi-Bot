@@ -18,3 +18,11 @@
 #Node modules
 node_modules
 package-lock.json
+
+#.env and setting
+.env.*
+
+#dist folder
+./dist
+dist
+dist/
