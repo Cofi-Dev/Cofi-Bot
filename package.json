@@ -25,6 +25,10 @@
     "url": "https://github.com/victorst79/NaM-Bot/issues"
   },
   "homepage": "https://github.com/victorst79/NaM-Bot#readme",
+  "engines": {
+    "npm": ">=6.10.0",
+    "node": ">=12.0.0"
+  },
   "dependencies": {
     "@types/node": "^14.0.1",
     "chalk": "^4.0.0",
