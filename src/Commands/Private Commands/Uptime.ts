@@ -5,7 +5,7 @@ export default class Uptime extends Command {
   public constructor() {
     super("uptime", {
       aliases: ["uptime"],
-      category: "Public Commands",
+      category: "Private Commands",
       description: {
         content: "Check the online application time",
         usage: "uptime",

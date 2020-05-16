@@ -1,4 +1,5 @@
 import { Listener } from "discord-akairo";
+const chalk = require('chalk');
 
 export default class ReadyListener extends Listener {
   public constructor() {
@@ -10,6 +11,6 @@ export default class ReadyListener extends Listener {
   }
 
   public exec(): void {
-    console.log(`${this.client.user.tag} is now online.`);
+    console.log(chalk.keyword('green')(`🟢 ${this.client.user.tag} is now online.`));
   }
 }
