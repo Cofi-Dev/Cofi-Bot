@@ -4,7 +4,8 @@
   "description": "Multifuctional discord bot",
   "main": "init.ts",
   "scripts": {
-    "start": "node src/index.js",
+    "build": "tsc",
+    "start": "node dist/init.js",
     "watch": "tsc -p tsconfig.json -w",
     "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\""
   },
