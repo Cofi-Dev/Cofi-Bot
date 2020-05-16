@@ -16,6 +16,9 @@ interface BotOptions {
 }
 
 export default class BotClient extends AkairoClient {
+  static getAllCommands(): any {
+    throw new Error("Method not implemented.");
+  }
   public config: BotOptions;
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
     directory: join(__dirname, "..", "Listeners"),
@@ -60,6 +63,10 @@ export default class BotClient extends AkairoClient {
 
     this.commanHandler.loadAll();
     this.listenerHandler.loadAll();
+  }
+
+  public getAllCommands(): any {
+    return this.commanHandler.aliases;
   }
 
   public async start(): Promise<string> {

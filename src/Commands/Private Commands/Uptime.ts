@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo";
-import { Message } from "discord.js";
+import { Message, MessageEmbed } from "discord.js";
 
 export default class Uptime extends Command {
   public constructor() {
@@ -15,13 +15,21 @@ export default class Uptime extends Command {
     });
   }
 
-  private checkUptime(): Date {
+  private checkUptime(): String {
+    let readyAt = this.client.readyAt.getTime();
     let now = new Date().getTime();
-
-    return new Date(now);
+    let distance = Math.abs(readyAt - now);
+    const hours = Math.floor(distance / 3600000);
+    distance -= hours * 3600000;
+    const minutes = Math.floor(distance / 60000);
+    distance -= minutes * 60000;
+    const seconds = Math.floor(distance / 1000);
+    return `${hours}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
   }
 
   public exec(message: Message): Promise<Message> {
-    return message.util.send(`Working`);
+    return message.util.send(
+      new MessageEmbed().setTitle(`Bot Uptime`).setColor("GREEN").setDescription(`${this.checkUptime()}`)
+    );
   }
 }
