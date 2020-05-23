@@ -4,7 +4,7 @@
   "description": "Multifuctional discord bot",
   "main": "init.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/init.js",
     "watch": "tsc -p tsconfig.json -w",
     "format": "prettier --write \"src/**/*.*(js|ts)\"",
