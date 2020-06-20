@@ -1,11 +1,12 @@
 {
   "name": "nam-bot",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Multifuctional discord bot",
   "main": "init.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/init.js",
+    "dev": "nodemon dist/init.js",
     "watch": "tsc -p tsconfig.json -w",
     "format": "prettier --write \"src/**/*.*(js|ts)\"",
     "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\""
@@ -30,22 +31,23 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@types/node": "^14.0.1",
-    "chalk": "^4.0.0",
+    "@types/node": "^14.0.13",
+    "chalk": "^4.1.0",
     "discord-akairo": "^8.0.0",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "inversify": "^5.0.1",
     "reflect-metadata": "^0.1.13",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.5"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
     "chai": "^4.2.0",
     "mocha": "^7.1.2",
+    "nodemon": "^2.0.4",
     "prettier": "2.0.5",
-    "ts-mockito": "^2.5.0",
-    "ts-node": "^8.10.1"
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^8.10.2"
   }
 }

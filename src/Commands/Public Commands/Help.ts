@@ -1,6 +1,5 @@
 import { Command, CommandHandler } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
-import BotClient from "../../Client/BotClient";
 
 export default class Help extends Command {
   public constructor() {
@@ -25,6 +24,6 @@ export default class Help extends Command {
   }
 
   public async exec(message: Message, { command }: { command: Command }): Promise<Message> {
-    return message.util.send(new MessageEmbed().setTitle(`Commands`).setColor("BLUE").setDescription(""));
+    return message.util.send(new MessageEmbed().setTitle(`Commands`).setColor("BLUE").setDescription("Hola"));
   }
 }
