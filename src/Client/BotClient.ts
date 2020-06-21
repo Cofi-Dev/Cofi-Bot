@@ -1,5 +1,6 @@
 import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
 import { User, Message } from "discord.js";
+import { BotOptions } from "../Utils/Interfaces";
 import { join } from "path";
 import { token, prefix, owners } from "../Settings/settings";
 
@@ -10,15 +11,7 @@ declare module "discord-akairo" {
   }
 }
 
-interface BotOptions {
-  token?: string;
-  owners?: string | string[];
-}
-
 export default class BotClient extends AkairoClient {
-  static getAllCommands(): any {
-    throw new Error("Method not implemented.");
-  }
   public config: BotOptions;
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
     directory: join(__dirname, "..", "Listeners"),
@@ -63,10 +56,6 @@ export default class BotClient extends AkairoClient {
 
     this.commanHandler.loadAll();
     this.listenerHandler.loadAll();
-  }
-
-  public getAllCommands(): any {
-    return this.commanHandler.aliases;
   }
 
   public async start(): Promise<string> {
