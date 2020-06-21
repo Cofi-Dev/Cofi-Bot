@@ -15,12 +15,13 @@
     "type": "git",
     "url": "git+https://github.com/victorst79/NaM-Bot.git"
   },
-  "keywords": [
-    "Typescript",
-    "Discord",
-    "Bot"
-  ],
   "author": "Victor Santaella",
+  "maintainers": [
+    {
+      "name": "Victor Santaella",
+      "url": "https://github.com/victorst79"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/victorst79/NaM-Bot/issues"
