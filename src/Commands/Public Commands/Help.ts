@@ -25,7 +25,6 @@ export default class Help extends Command {
   public async exec(message: Message, { command }: { command: Command }): Promise<Message> {
     const commands = this.client.commanHandler.modules;
     if (command) {
-      console.log(command);
       return message.util.send(
         new MessageEmbed()
           .setTitle(`Help | ${command.description.usage} `)
@@ -33,9 +32,12 @@ export default class Help extends Command {
           .setDescription(`${command.description.content}`)
       );
     } else {
-      return message.util.send(
-        new MessageEmbed().setTitle(`Commands`).setColor("BLUE").setDescription("Sin arguementos")
-      );
+      let messageEmbed = new MessageEmbed().setTitle(`Commands`).setColor("BLUE");
+      commands.forEach((index) => {
+        // console.log(index.aliases)
+        messageEmbed.addFields({ name: `${index.aliases[0]}`, value: `${index.description}`, inline: true });
+      });
+      return message.util.send(messageEmbed);
     }
   }
 }
