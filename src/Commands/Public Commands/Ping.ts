@@ -22,11 +22,6 @@ export default class Ping extends Command {
       new MessageEmbed()
         .setAuthor("Ping", this.client.user.avatarURL())
         .setColor("GREEN")
-        // Old style
-        // .setDescription(
-        //   `🔂 **RTT**: ${timeDiff} ms\n
-        // 💟 **Heartbeat**: ${Math.round(this.client.ws.ping)} ms`
-        // )
         .addFields(
           { name: "🔂 **RTT**", value: `${timeDiff} ms`, inline: true },
           { name: "💟 **Heartbeat**", value: `${Math.round(this.client.ws.ping)} ms`, inline: true }

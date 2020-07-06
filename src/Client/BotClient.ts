@@ -1,8 +1,8 @@
 import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
-import { User, Message } from "discord.js";
+import { Message } from "discord.js";
 import { BotOptions } from "../Utils/Interfaces";
 import { join } from "path";
-import { token, prefix, owners } from "../Settings/settings";
+import { prefix, owners } from "../Settings/settings";
 
 declare module "discord-akairo" {
   interface AkairoClient {
