@@ -4,11 +4,11 @@
   "description": "Multifuctional discord bot",
   "main": "init.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
     "start": "node dist/init.js",
-    "dev": "nodemon dist/init.js",
     "watch": "tsc -p tsconfig.json -w",
+    "dev": "nodemon dist/init.js",
     "format": "prettier --write \"src/**/*.*(js|ts)\"",
+    "build": "tsc -p tsconfig.json",
     "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\""
   },
   "repository": {
