@@ -1,5 +1,6 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
+import { prefix } from "../../Settings/settings";
 
 export default class Help extends Command {
   public constructor() {
@@ -8,7 +9,7 @@ export default class Help extends Command {
       category: "Public Commands",
       description: {
         content: "Show all avaible commands.",
-        usage: "help",
+        usage: "help [ Command ]",
         example: ["help"],
       },
       ratelimit: 3,
@@ -34,8 +35,11 @@ export default class Help extends Command {
     } else {
       let messageEmbed = new MessageEmbed().setTitle(`Commands`).setColor("BLUE");
       commands.forEach((index) => {
-        // console.log(index.aliases)
-        messageEmbed.addFields({ name: `${index.aliases[0]}`, value: `${index.description}`, inline: true });
+        messageEmbed.addFields({
+          name: `${index.aliases[0]}`,
+          value: "```" + `${prefix}${index.description.usage}` + "```",
+          inline: true,
+        });
       });
       return message.util.send(messageEmbed);
     }
