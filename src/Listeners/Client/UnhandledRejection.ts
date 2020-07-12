@@ -10,6 +10,5 @@ export default class UnhandledRejection extends Listener {
 
   public exec(error): void {
     console.error(error);
-    console.error("entra");
   }
 }
