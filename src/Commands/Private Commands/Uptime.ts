@@ -15,6 +15,7 @@ export default class Uptime extends Command {
     });
   }
 
+  // TODO refactor this function is pretty weird imo...
   private checkUptime(): String {
     let readyAt = this.client.readyAt.getTime();
     let now = new Date().getTime();
