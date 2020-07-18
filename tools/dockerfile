@@ -1,0 +1,7 @@
+FROM node:12
+WORKDIR /NaM-Bot
+COPY package.json /NaM-Bot
+RUN npm install
+COPY . /app
+CMD npm run dev
+EXPOSE 8081
