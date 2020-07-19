@@ -1,6 +1,5 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
-import moment = require("moment");
 
 export default class Uptime extends Command {
   public constructor() {

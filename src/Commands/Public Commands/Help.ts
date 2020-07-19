@@ -28,7 +28,7 @@ export default class Help extends Command {
   public async exec(message: Message, { command }: { command: Command }): Promise<Message> {
     const commands = this.client.commanHandler.modules;
     if (command) {
-      console.log('entra')
+      console.log("entra");
       return message.util.send(
         new MessageEmbed()
           .setTitle(`Help | ${command.description.usage} `)
