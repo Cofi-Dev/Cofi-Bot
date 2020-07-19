@@ -4,7 +4,7 @@ import { Message, MessageEmbed } from "discord.js";
 export default class Ping extends Command {
   public constructor() {
     super("ping", {
-      aliases: ["ping"],
+      aliases: ["Ping"],
       category: "Private Commands",
       description: {
         content: "Check the latency of the ping to server",

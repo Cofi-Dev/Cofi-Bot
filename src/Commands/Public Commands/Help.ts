@@ -1,11 +1,13 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
 import { prefix } from "../../Settings/settings";
+import { checkUserRol } from "../../Utils/Services";
+import { GuildMember } from "discord.js";
 
 export default class Help extends Command {
   public constructor() {
     super("help", {
-      aliases: ["help", "h"],
+      aliases: ["Help", "h"],
       category: "Public Commands",
       description: {
         content: "Show all avaible commands.",
@@ -26,6 +28,7 @@ export default class Help extends Command {
   public async exec(message: Message, { command }: { command: Command }): Promise<Message> {
     const commands = this.client.commanHandler.modules;
     if (command) {
+      console.log('entra')
       return message.util.send(
         new MessageEmbed()
           .setTitle(`Help | ${command.description.usage} `)
@@ -34,10 +37,10 @@ export default class Help extends Command {
       );
     } else {
       let messageEmbed = new MessageEmbed().setTitle(`Commands`).setColor("BLUE");
-      commands.forEach((index) => {
+      commands.forEach((command) => {
         messageEmbed.addFields({
-          name: `${index.aliases[0]}`,
-          value: "```" + `${prefix}${index.description.usage}` + "```",
+          name: `${command.aliases[0]}`,
+          value: "```" + `${prefix}${command.description.usage}` + "```",
           inline: true,
         });
       });

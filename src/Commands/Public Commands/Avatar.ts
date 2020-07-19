@@ -4,7 +4,7 @@ import { Message, GuildMember, MessageEmbed, ImageSize } from "discord.js";
 export default class Avatar extends Command {
   public constructor() {
     super("avatar", {
-      aliases: ["avatar", "icon"],
+      aliases: ["Avatar", "Icon"],
       category: "Public Commands",
       description: {
         content: "Display the avatar of a member",

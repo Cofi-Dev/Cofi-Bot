@@ -1,7 +1,7 @@
 import { color } from "../../Settings/settings";
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
-import { timeFormat } from "../../Utils/Services/TimeFormer";
+import { timeFormat } from "../../Utils/Services";
 
 export default class Info extends Command {
   public constructor() {
@@ -13,6 +13,7 @@ export default class Info extends Command {
         usage: "info [ @member ]",
         examples: ["info"],
       },
+      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
       ratelimit: 3,
       args: [
         {

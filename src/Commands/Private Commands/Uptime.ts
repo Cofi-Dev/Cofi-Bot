@@ -1,10 +1,11 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
+import moment = require("moment");
 
 export default class Uptime extends Command {
   public constructor() {
     super("uptime", {
-      aliases: ["uptime"],
+      aliases: ["Uptime"],
       category: "Private Commands",
       description: {
         content: "Check the online application time",
