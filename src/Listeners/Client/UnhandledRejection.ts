@@ -1,4 +1,5 @@
 import { Listener } from "discord-akairo";
+const chalk = require("chalk");
 
 export default class UnhandledRejection extends Listener {
   constructor() {
@@ -9,6 +10,6 @@ export default class UnhandledRejection extends Listener {
   }
 
   public exec(error): void {
-    console.error(error);
+    console.log(chalk.keyword("red")(`🔴 An error has occurred: ${error}`));
   }
 }
