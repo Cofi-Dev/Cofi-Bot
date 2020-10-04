@@ -1,7 +1,7 @@
 import { color } from "../../Settings/settings";
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
-import { timeFormat } from "../../Utils/Services";
+import { timeFormat, checkUserRol } from "../../Utils/Services";
 
 export default class Info extends Command {
   public constructor() {
@@ -27,7 +27,8 @@ export default class Info extends Command {
 
   public async exec(message: Message, { member }: { member }): Promise<Message> {
     if (member) {
-      console.log(member);
+      // console.log(member);
+      checkUserRol(member)
       return message.util.send(
         new MessageEmbed()
           .setColor(color)
