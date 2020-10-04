@@ -8,9 +8,9 @@ import { User, RoleManager } from "discord.js";
  * @returns {String} Formatted date.
  */
 export function checkUserRol(user: User) {
-    if (user) {
-        return user.roles;
-    } else {
-        console.warn('User Invalid');
-    }
+  if (user) {
+    return user.roles;
+  } else {
+    console.warn("User Invalid");
+  }
 }

@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo";
-import { Message,MessageEmbed } from "discord.js";
+import { Message, MessageEmbed } from "discord.js";
 const ytdl = require("ytdl-core");
 
 export default class Stop extends Command {
@@ -21,7 +21,7 @@ export default class Stop extends Command {
     voiceChannel.leave();
 
     return message.util.send(
-        new MessageEmbed().setTitle(`Music service`).setColor("RED").setDescription(`Leaving voice channel`)
-      );
+      new MessageEmbed().setTitle(`Music service`).setColor("RED").setDescription(`Leaving voice channel`)
+    );
   }
 }

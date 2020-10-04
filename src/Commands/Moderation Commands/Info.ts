@@ -28,7 +28,7 @@ export default class Info extends Command {
   public async exec(message: Message, { member }: { member }): Promise<Message> {
     if (member) {
       // console.log(member);
-      checkUserRol(member)
+      checkUserRol(member);
       return message.util.send(
         new MessageEmbed()
           .setColor(color)
