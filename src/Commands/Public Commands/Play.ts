@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo";
-import { Message } from "discord.js";
+import { Message, MessageEmbed } from "discord.js";
 const ytdl = require("ytdl-core");
 
 export default class Play extends Command {
@@ -39,5 +39,10 @@ export default class Play extends Command {
       const dispatcher = connection.play(stream);
       dispatcher.on("finish", () => voiceChannel.leave());
     });
+
+    // TODO: Refactor feedback
+    return message.util.send(
+      new MessageEmbed().setTitle(`Music service`).setColor("RED").setDescription(`Started player`)
+    );
   }
 }
