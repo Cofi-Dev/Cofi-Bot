@@ -19,9 +19,9 @@ export default class Skip extends Command {
   public async exec(message: Message): Promise<Message> {
     const voiceChannel = message.member.voice.channel;
     voiceChannel.leave();
-
+    // TODO: CHANGE THIS FUNCTION
     return message.util.send(
-      new MessageEmbed().setTitle(`Music service`).setColor("RED").setDescription(`Skip`)
+      new MessageEmbed().setTitle(`Music service`).setColor("GREEN").setDescription(`Skip actual song`)
     );
   }
 }
