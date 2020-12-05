@@ -1,8 +1,6 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
 import { prefix } from "../../Settings/settings";
-import { checkUserRol } from "../../Utils/Services";
-import { GuildMember } from "discord.js";
 
 export default class Help extends Command {
   public constructor() {

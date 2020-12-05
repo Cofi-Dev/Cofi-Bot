@@ -1,5 +1,6 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
+import { color } from "../../Settings/settings";
 
 export default class Uptime extends Command {
   public constructor() {
@@ -30,7 +31,7 @@ export default class Uptime extends Command {
 
   public exec(message: Message): Promise<Message> {
     return message.util.send(
-      new MessageEmbed().setTitle(`Bot Uptime`).setColor("GREEN").setDescription(`${this.checkUptime()}`)
+      new MessageEmbed().setTitle(`Bot Uptime`).setColor(color).setDescription(`🕓${this.checkUptime()}`)
     );
   }
 }

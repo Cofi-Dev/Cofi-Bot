@@ -1,5 +1,7 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
+import { color } from "../../Settings/settings";
+
 const ytdl = require("ytdl-core");
 
 export default class Play extends Command {
@@ -27,22 +29,20 @@ export default class Play extends Command {
     const voiceChannel = message.member.voice.channel;
 
     if (!voiceChannel) {
-      return message.reply("please join a voice channel first");
+      return message.reply("Please join a voice channel first");
     }
 
     if (!url) {
-      return message.reply("please provide an url");
+      return message.reply("Please provide an url");
     }
 
     voiceChannel.join().then((connection) => {
-      const stream = ytdl(`${url}`, { filter: "audioonly" });
+      let stream = ytdl(`${url}`, { filter: "audioonly" });
       const dispatcher = connection.play(stream);
       dispatcher.on("finish", () => voiceChannel.leave());
     });
 
-    // TODO: Refactor feedback
-    return message.util.send(
-      new MessageEmbed().setTitle(`Music service`).setColor("RED").setDescription(`Started player`)
-    );
+    // TODO: Refactor feedback rel: https://github.com/victorst79/NaM-Bot/issues/4
+    return message.util.send(new MessageEmbed().setTitle(`Now playing`).setColor(color).setDescription(`${url}`));
   }
 }

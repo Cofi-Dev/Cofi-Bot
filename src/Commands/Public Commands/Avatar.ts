@@ -8,7 +8,7 @@ export default class Avatar extends Command {
       category: "Public Commands",
       description: {
         content: "Display the avatar of a member",
-        usage: "avatar [ member ]",
+        usage: "avatar [@member]",
         examples: ["avatar", "avatar @User#0000", "avatar host"],
       },
       ratelimit: 3,
