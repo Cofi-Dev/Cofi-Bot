@@ -30,18 +30,18 @@ export default class Info extends Command {
       return message.util.send(
         new MessageEmbed()
           .setColor(color)
-          .setTitle(`${member.user.username}#${member.user.discriminator} | ${member.nickname}`)
+          .setTitle(`${member.user.username}#${member.user.discriminator}`)
           .setAuthor(`Member Info`)
           .setThumbnail(member.user.avatarURL())
           .addFields(
             {
               name: "User roles",
-              value: checkUserRol(message.guild.roles.cache, [...member._roles]),
+              value: checkUserRol([...message.guild.roles.cache.array()], [...member._roles]),
               inline: true,
             },
             {
               name: "Server Permissions",
-              value: checkUserPermission(member),
+              value: checkUserPermission(member.permissions),
               inline: true,
             },
             {

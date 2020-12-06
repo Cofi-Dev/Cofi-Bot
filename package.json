@@ -9,8 +9,7 @@
     "dev": "nodemon dist/init.js",
     "format": "prettier --write \"src/**/*.*(js|ts)\"",
     "build": "tsc -p tsconfig.json",
-    "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\"",
-    "test2": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
