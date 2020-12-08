@@ -1,6 +1,6 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
-import { color } from "../../Settings/settings";
+import { color } from "../../Settings";
 
 const ytdl = require("ytdl-core");
 

@@ -4,7 +4,7 @@ import { checkUserRol } from '../../src/Utils/Services/CheckUserRol';
 
 describe('CheckUserRol Service', 
   () => { 
-    var guildRoles:Array<String | Object> = [
+    const guildRoles:Array<String | Object> = [
         [   
             '764487801533366302',
             {
@@ -57,6 +57,6 @@ describe('CheckUserRol Service',
     it("With an empty ID array", () => { 
         const result = checkUserRol(guildRoles, []);
         expect(result).to.be.a('string')
-        .equal('This user does not have any role assigned'); 
+        .equal('This user does not have any role assigned.'); 
     });
 });

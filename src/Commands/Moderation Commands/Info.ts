@@ -1,4 +1,4 @@
-import { color } from "../../Settings/settings";
+import { color } from "../../Settings";
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
 import { timeFormat, checkUserRol, checkUserPermission } from "../../Utils/Services";
@@ -41,7 +41,7 @@ export default class Info extends Command {
             },
             {
               name: "Server Permissions",
-              value: checkUserPermission(member.permissions),
+              value: checkUserPermission([...member.permissions.toArray()]),
               inline: true,
             },
             {

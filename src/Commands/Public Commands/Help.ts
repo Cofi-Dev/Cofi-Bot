@@ -1,6 +1,6 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
-import { prefix } from "../../Settings/settings";
+import { prefix } from "../../Settings";
 
 export default class Help extends Command {
   public constructor() {
@@ -26,7 +26,6 @@ export default class Help extends Command {
   public async exec(message: Message, { command }: { command: Command }): Promise<Message> {
     const commands = this.client.commanHandler.modules;
     if (command) {
-      console.log("entra");
       return message.util.send(
         new MessageEmbed()
           .setTitle(`Help | ${command.description.usage} `)

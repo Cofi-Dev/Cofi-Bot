@@ -1,4 +1,4 @@
-import { token, owners } from "./Settings/settings";
+import { token, owners } from "./Settings";
 import BotClient from "./Client/BotClient";
 
 const client: BotClient = new BotClient({ token, owners });

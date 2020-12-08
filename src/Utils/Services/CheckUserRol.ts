@@ -8,7 +8,7 @@
  */
 export function checkUserRol(guildRoles: Array<String | Object | any>, rolId: Array<String>): String {
   let allUserRoles: Array<String> = [];
-  if (rolId.length === 0) return "This user does not have any role assigned";
+  if (rolId.length === 0) return "This user does not have any role assigned.";
 
   rolId.forEach((role) => {
     guildRoles.forEach((guildRole) => {

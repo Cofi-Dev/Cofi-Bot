@@ -4,7 +4,7 @@ import { timeFormat } from '../../src/Utils/Services/TimeFormat';
 
 describe('TimeFormat Service', 
   () => { 
-    let dateTime = Number(new Date());
+    const dateTime = Number(new Date());
 
     it("With 'standart' parameter", () => { 
       const result = timeFormat(dateTime, 'standart');

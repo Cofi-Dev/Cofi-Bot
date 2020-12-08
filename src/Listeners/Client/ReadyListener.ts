@@ -1,4 +1,5 @@
 import { Listener } from "discord-akairo";
+import API from "../../API/API";
 const chalk = require("chalk");
 
 export default class ReadyListener extends Listener {
@@ -11,6 +12,7 @@ export default class ReadyListener extends Listener {
   }
 
   public exec(): void {
+    new API(this.client).start();
     console.log(chalk.bold.rgb(10, 100, 200)(`${this.client.user.tag}`));
     console.log(`Version: Alpha`);
     console.log(chalk.keyword("yellow")(`Ready at: ${this.client.readyAt.toLocaleString()}`));
