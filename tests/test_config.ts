@@ -1,0 +1,1 @@
+export const server: String = "http://localhost:8888";
