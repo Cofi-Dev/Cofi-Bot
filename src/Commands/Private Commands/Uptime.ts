@@ -12,11 +12,12 @@ export default class Uptime extends Command {
         usage: "uptime",
         examples: ["uptime"],
       },
+      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
       ratelimit: 3,
     });
   }
 
-  // TODO refactor this function is pretty weird imo...
+  // @TODO refactor this function. can use moment.js
   private checkUptime(): String {
     let readyAt = this.client.readyAt.getTime();
     let now = new Date().getTime();
