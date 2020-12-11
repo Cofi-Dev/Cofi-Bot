@@ -20,9 +20,12 @@ export default class GuildRouter {
       if (!guild) return res.status(404).send({ message: "Guild NOT FOUND" });
 
       return res.status(200).send({
+        id: guild.id,
         name: guild.name,
         owner: guild.owner !== null ? guild.owner.user.tag : null,
         members: guild.memberCount,
+        icon: guild.icon,
+        region: guild.region
       });
     });
 
