@@ -25,7 +25,7 @@ export default class GuildRouter {
         owner: guild.owner !== null ? guild.owner.user.tag : null,
         members: guild.memberCount,
         icon: guild.icon,
-        region: guild.region
+        region: guild.region,
       });
     });
 

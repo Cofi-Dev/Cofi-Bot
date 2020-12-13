@@ -46,6 +46,7 @@
     "inversify": "^5.0.1",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2",
     "reflect-metadata": "^0.1.13",
     "typescript": "^3.9.5",
     "ytdl-core": "^3.4.2"

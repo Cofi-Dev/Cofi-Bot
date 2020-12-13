@@ -1,6 +1,9 @@
 import { Command } from "discord-akairo";
 import { Message, MessageEmbed } from "discord.js";
 import { color } from "../../Settings";
+import moment from "moment";
+import "moment-duration-format";
+import { Duration } from "../../Utils/Interfaces";
 
 export default class Uptime extends Command {
   public constructor() {
@@ -17,22 +20,18 @@ export default class Uptime extends Command {
     });
   }
 
-  // @TODO refactor this function. can use moment.js
   private checkUptime(): String {
-    let readyAt = this.client.readyAt.getTime();
-    let now = new Date().getTime();
-    let distance = Math.abs(readyAt - now);
-    const hours = Math.floor(distance / 3600000);
-    distance -= hours * 3600000;
-    const minutes = Math.floor(distance / 60000);
-    distance -= minutes * 60000;
-    const seconds = Math.floor(distance / 1000);
-    return `${hours}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
+    const readyAt = moment(this.client.readyAt.getTime());
+    const now = moment(new Date());
+
+    const ms = moment(now, "DD/MM/YYYY HH:mm:ss").diff(moment(readyAt, "DD/MM/YYYY HH:mm:ss"));
+    const d = moment.duration(ms) as Duration;
+    return d.format("HH:mm:ss");
   }
 
   public exec(message: Message): Promise<Message> {
     return message.util.send(
-      new MessageEmbed().setTitle(`Bot Uptime`).setColor(color).setDescription(`🕓${this.checkUptime()}`)
+      new MessageEmbed().setTitle(`🕓 Bot Uptime`).setColor(color).setDescription(`${this.checkUptime()}`)
     );
   }
 }
