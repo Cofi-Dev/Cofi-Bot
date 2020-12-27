@@ -11,7 +11,7 @@ export default class Play extends Command {
       category: "Public Commands",
       description: {
         content: "Play some music",
-        usage: "play [ url ]",
+        usage: "play [url]",
         examples: ["play"],
       },
       ratelimit: 3,
