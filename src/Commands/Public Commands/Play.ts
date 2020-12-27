@@ -27,14 +27,20 @@ export default class Play extends Command {
 
   public async exec(message: Message, { url }: { url: String }): Promise<Message> {
     const voiceChannel = message.member.voice.channel;
+    const permissions = voiceChannel.permissionsFor(message.client.user);
+    const queue = new Map();
 
-    if (!voiceChannel) {
-      return message.reply("Please join a voice channel first");
-    }
+    if (!voiceChannel) return message.reply("Please join a voice channel first");
+    if (!url) return message.reply("Please provide an url");
+    if (!permissions.has("CONNECT") || !permissions.has("SPEAK"))
+      return message.channel.send("I need the permissions to join and speak in your voice channel!");
 
-    if (!url) {
-      return message.reply("Please provide an url");
-    }
+    const args = message.content.split(" ");
+    const songInfo = await ytdl.getInfo(args[1]);
+    const song = {
+      title: songInfo.videoDetails.title,
+      url: songInfo.videoDetails.video_url,
+    };
 
     voiceChannel.join().then((connection) => {
       let stream = ytdl(`${url}`, { filter: "audioonly" });
@@ -42,7 +48,11 @@ export default class Play extends Command {
       dispatcher.on("finish", () => voiceChannel.leave());
     });
 
-    // TODO: Refactor feedback rel: https://github.com/victorst79/NaM-Bot/issues/4
-    return message.util.send(new MessageEmbed().setTitle(`Now playing`).setColor(color).setDescription(`${url}`));
+    return message.util.send(
+      new MessageEmbed()
+        .setTitle(`Now playing`)
+        .setColor(color)
+        .setDescription(`[${song.title}](${song.url}) [${message.author}]`)
+    );
   }
 }
