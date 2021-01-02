@@ -1,6 +1,6 @@
 FROM node:12
-WORKDIR /NaM-Bot
-COPY . /NaM-Bot
+WORKDIR /bot
+COPY . .
 RUN npm install
 COPY . /app
 CMD npm run watch && npm run dev
