@@ -3,5 +3,5 @@ WORKDIR /bot
 COPY . .
 RUN npm install
 COPY . /app
-CMD npm run watch && npm run dev
+CMD npm run dev
 EXPOSE 8081

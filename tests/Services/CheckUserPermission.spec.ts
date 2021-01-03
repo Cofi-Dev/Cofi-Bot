@@ -1,6 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
-import { checkUserPermission } from '../../src/Utils/Services/checkUserPermission';
+import { checkUserPermission } from '../../src/Utils/Services/CheckUserPermission';
 
 describe('CheckUserPermission Service', () => {
     const permissions = [
