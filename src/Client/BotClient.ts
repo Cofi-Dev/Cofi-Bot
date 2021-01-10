@@ -12,6 +12,7 @@ declare module "discord-akairo" {
 }
 
 export default class BotClient extends AkairoClient {
+  public queue = new Map();
   public config: BotOptions;
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
     directory: join(__dirname, "..", "Listeners"),
