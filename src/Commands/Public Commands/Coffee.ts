@@ -38,9 +38,10 @@ export default class Coffee extends Command {
         {}
       );
       Object.keys(userReactions).forEach(function (key) {
-        userList.push(userReactions[key].username);
+        userReactions[key].username !== "NaM-bot" && userList.push(userReactions[key].username);
       });
-      return userList.join(",\r\n");
+
+      return userList.length !== 0 ? userList.join(", ") : "No votos negativos";
     };
 
     const countVotes = (upVote: MessageReaction, downVote: MessageReaction) => {
@@ -49,15 +50,12 @@ export default class Coffee extends Command {
       if (downVote.count > upVote.count) {
         return message.util.send(finalMessage.setDescription(`Cafe? Cancelado...`));
       } else {
-        console.log(getUsersReactions(upVote.users.cache));
-
-        return message.util.send(
+         return message.util.send(
           finalMessage
-            .setDescription(`Hora del Cafe familia`)
-            .addFields(
-              { name: "👍", value: `${getUsersReactions(upVote.users.cache)}`, inline: true },
-              { name: "👎", value: `${getUsersReactions(downVote.users.cache)}`, inline: true }
-            )
+            .setImage("https://i.imgur.com/ukv7zKM.jpeg")
+            .setDescription(`☕ Hora del Cafe familia`)
+            .addFields({ name: "👍", value: `${getUsersReactions(upVote.users.cache)}`, inline: false })
+            .addFields({ name: "👎", value: `${getUsersReactions(downVote.users.cache)}`, inline: false })
         );
       }
     };
