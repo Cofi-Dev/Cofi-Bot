@@ -3,7 +3,6 @@ import { Message, MessageEmbed } from "discord.js";
 import { color } from "../../Settings";
 
 const ytdl = require("ytdl-core");
-
 export default class Play extends Command {
   public constructor() {
     super("play", {
