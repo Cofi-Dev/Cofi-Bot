@@ -25,6 +25,8 @@ export default class API {
     );
 
     new GuildRouter(this.server, this.client);
-    createServer(this.server).listen(8888, (): void => console.log(chalk.keyword("green")(`API is now online.`)));
+    createServer(this.server).listen(process.env.PORT || 8888, (): void =>
+      console.log(chalk.keyword("green")(`API is now online.`))
+    );
   }
 }
