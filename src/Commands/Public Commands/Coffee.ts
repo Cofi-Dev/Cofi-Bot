@@ -50,7 +50,7 @@ export default class Coffee extends Command {
       if (downVote.count > upVote.count) {
         return message.util.send(finalMessage.setDescription(`Cafe? Cancelado...`));
       } else {
-         return message.util.send(
+        return message.util.send(
           finalMessage
             .setImage("https://i.imgur.com/ukv7zKM.jpeg")
             .setDescription(`☕ Hora del Cafe familia`)
