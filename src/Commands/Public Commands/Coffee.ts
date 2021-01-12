@@ -49,10 +49,8 @@ export default class Coffee extends Command {
 
       if (downVote.count > upVote.count) {
         return message.util.send(
-          finalMessage
-            .setDescription(`Cafe? Cancelado...`)
-            .setImage("https://i.imgur.com/ukv7zKM.jpeg")
-          );
+          finalMessage.setDescription(`Cafe cancelado...`).setImage("https://i.imgur.com/ukv7zKM.jpeg")
+        );
       } else {
         return message.util.send(
           finalMessage
