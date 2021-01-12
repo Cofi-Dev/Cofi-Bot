@@ -1,5 +1,8 @@
-export const token: string = "NzExMTU1NzI4OTExNDMzNzY5.XxQfuA.JpZeZ2QTzRf5ovZs3LbzZSyfEuA";
+const dotenv = require("dotenv");
+dotenv.config();
+
+export const token: string = process.env.TOKEN;
+export const authorization: string = process.env.API_TOKEN;
 export const prefix: string = "!";
 export const owners: string[] = [];
 export const color: string = "BLUE";
-export const authorization: string = "secretPassword";
