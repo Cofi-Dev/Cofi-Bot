@@ -48,7 +48,11 @@ export default class Coffee extends Command {
       const finalMessage = new MessageEmbed().setTitle(`𝒞𝒶𝒻𝑒?`).setColor(color);
 
       if (downVote.count > upVote.count) {
-        return message.util.send(finalMessage.setDescription(`Cafe? Cancelado...`));
+        return message.util.send(
+          finalMessage
+            .setDescription(`Cafe? Cancelado...`)
+            .setImage("https://i.imgur.com/ukv7zKM.jpeg")
+          );
       } else {
         return message.util.send(
           finalMessage
@@ -68,7 +72,7 @@ export default class Coffee extends Command {
 
       countVotes(upVote, downVote);
       removeReactions(sent);
-    }, 3000);
+    }, 10000);
 
     return sent;
   }
