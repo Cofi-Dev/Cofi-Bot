@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-  - 12.0.0
+- 12.0.0
 install:
-  - npm install
+- npm install
 script:
-  - npm run test-services
+- npm run test-services
 branches:
   only:
-    - master
+  - master
 deploy:
   provider: heroku
   api_key:
-    secure: ADD_API_KEY_HERE
+    secure: bMaRmVJmeze4+ZCPVoAfq5wETtJUYMbwt9ZPA0OB1MduuZqMqF5VddNghpZbbBDsRmJNA1k0PSCUzUhJvydzXzam6OnceXF29wAKhklslqlNI9KU/By++buAarp/r9/CznFN7ZOGrtW9TlDV0DjBwREIjRpgXL6z3VwdZCvyuL7347GUpKUOv/uDW8+5DV5oRQNz+7hwveW+3ZSbkNro1SkZLTnKLsHE9BloChN06kw85OtFhjYBPOjzt6vkrayinWacnRcIQGJz4i6rLin1FLSeQq0+YrYZ6bi6QJSnqLd7UM4pw3/N+fiItN47qolYkqlRrW0jv3/5OKGb6KW+EoL6zo4z4gLreIjSM79vmOspJ1AmQMSDQjM1iQn/q4HqxU8bu5CF4WBjuIMEToJW7FKp6sCTE9/gzMeea3F4S77jFfZCJHhHStqC7oe812l4AOj/mWHdRsP+5Q1wvpIXly3AitVqCkdFH2l9HU8jbcfVtgg5yi3WyGm3bIjjl24pSstNfi8uuMOG8BH9mo7Z0mOP1GiS8vsG+szP6lIFOoDdavziZ85x7qFUG56ptve9TnErsg7A5tq/gXcD6dUXcZKB1sCO77fJFaVLBV7kMF8bXUQQs5Sstsn5GzC4OXbIbZqJsZJuJJ85XHPmxtsEvqoh3MSIQbshy1VGhDZbL7k=
   app:
     master: bot-prod
