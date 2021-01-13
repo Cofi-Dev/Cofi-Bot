@@ -8,9 +8,3 @@ script:
 branches:
   only:
   - master
-deploy:
-  provider: heroku
-  api_key:
-    secure: E4qCjJOCgcH647sDFAYI7CqGpVTPeMTqMiCLxUWGRASytH+Lz3cnuw88HHPbuDP15hwxVadq0nNnw2x7/tGPpnmP7Hb+6y4zrI71dbsvMARtqEvIVKEwtZqpv8i52H6+ZurIqD1QJlgyOuXTk6G0C354m2rNDzMW8G+k08u1omJruAEqe+ML3Un2f+91Hg9LhXI7o9Yfnn0ZclDU57ueFZRD69ExzD03ZZ0WHNk81qejyYKAdvZ2IMMfwM5UlyB88/x+tVQmjYCCaQ7OJqK/bcHeqGeXSc9NMDzYNjOKaTmfWe5ZDcYYXDu+3+wHXoWmMoxdqvf2Gcq5IobxtLnEBo/QNbn+AXXXrbY1lJwFeoAhVEIbm/e9O0AcmmNHxKzDhbvIVQ9she0QonBI4YRrrHoxENfpD+AnoBtdTlEd2lMM4nBWKMNDXuQDHyHNXHUBa5Zn7et2dubsbEvGI7RlXpS/M4pDL4M74iv+stGp6l/dRcx8j4OrIYCzYFEEZ7jH3XO4P9eqpHEzvEfXHjpErj6C1ULpQHkrLuaVNheMC1EOaWJwke1U1Y2k2BiMWfhdtd1KbhmSruD85AtpG+hgEA0uRJ6f7qQR536XfcT/+fUPpBwPk8UjN2azOwz7f7dM0nHdOU4ZqDJvM/VI5oM+J84vrA12E1Ri8t230pbwzaY=
-  app:
-    master: bot-prod
