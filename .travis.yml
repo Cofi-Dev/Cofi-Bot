@@ -12,3 +12,5 @@ deploy:
   provider: heroku
   api_key:
     secure: ADD_API_KEY_HERE
+  app:
+    master: bot-prod
