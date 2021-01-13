@@ -1,5 +1,6 @@
 <h1 align="center">🤖 Nam-Bot 🤖</h1>
 <p>
+ <img alt="Build" src="https://travis-ci.com/victorst79/NaM-Bot.svg?branch=master" />
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D6.10.0-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D12.0.0-blue.svg" />
