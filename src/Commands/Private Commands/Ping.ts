@@ -21,7 +21,7 @@ export default class Ping extends Command {
     const timeDiff = Math.abs(<any>(sent.editedAt || sent.createdAt) - <any>(message.editedAt || message.createdAt));
     return message.util.send(
       new MessageEmbed()
-        .setAuthor("Ping", this.client.user.avatarURL())
+        .setTitle(`Ping`)
         .setColor("GREEN")
         .addFields(
           { name: "🔂 **RTT**", value: `${timeDiff} ms`, inline: true },

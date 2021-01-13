@@ -24,9 +24,13 @@ export default class API {
       })
     );
 
+    /* LOAD ENDPOINT MODULES */
     new GuildRouter(this.server, this.client);
+
     createServer(this.server).listen(process.env.PORT || 8888, (): void =>
-      console.log(chalk.keyword("green")(`API is now online.`))
+      console.log(
+        chalk.keyword("green")(`API Service is now online. (PORT: ${process.env.PORT ? process.env.PORT : 8888})`)
+      )
     );
   }
 }
