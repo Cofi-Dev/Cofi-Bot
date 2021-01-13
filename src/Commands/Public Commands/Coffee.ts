@@ -38,7 +38,7 @@ export default class Coffee extends Command {
         {}
       );
       Object.keys(userReactions).forEach(function (key) {
-        userReactions[key].username !== "NaM-bot" && userList.push(userReactions[key].username);
+        userReactions[key].username !== "NaM-bot" && userList.push(`<@${userReactions[key].id}>`);
       });
 
       return userList.length !== 0 ? userList.join(", ") : "No votos negativos";
@@ -48,12 +48,14 @@ export default class Coffee extends Command {
       const finalMessage = new MessageEmbed().setTitle(`𝒞𝒶𝒻𝑒?`).setColor(color);
 
       if (downVote.count > upVote.count) {
-        return message.util.send(finalMessage.setDescription(`Cafe? Cancelado...`));
+        return message.util.send(
+          finalMessage.setDescription(`Coffee canceled...`).setImage("https://i.imgur.com/ukv7zKM.jpeg")
+        );
       } else {
         return message.util.send(
           finalMessage
             .setImage("https://i.imgur.com/ukv7zKM.jpeg")
-            .setDescription(`☕ Hora del Cafe familia`)
+            .setDescription(`☕ Coffee time`)
             .addFields({ name: "👍", value: `${getUsersReactions(upVote.users.cache)}`, inline: false })
             .addFields({ name: "👎", value: `${getUsersReactions(downVote.users.cache)}`, inline: false })
         );
@@ -68,7 +70,7 @@ export default class Coffee extends Command {
 
       countVotes(upVote, downVote);
       removeReactions(sent);
-    }, 3000);
+    }, 10000);
 
     return sent;
   }

@@ -26,10 +26,10 @@ export default class Play extends Command {
 
   public async exec(message: Message, { url }: { url: String }): Promise<Message> {
     const voiceChannel = message.member.voice.channel;
-    const permissions = voiceChannel.permissionsFor(message.client.user);
+    if (!voiceChannel) return message.reply("Please join a voice channel first.");
+    if (!url) return message.reply("Please provide a valid url.");
 
-    if (!voiceChannel) return message.reply("Please join a voice channel first");
-    if (!url) return message.reply("Please provide an url");
+    const permissions = voiceChannel.permissionsFor(message.client.user);
     if (!permissions.has("CONNECT") || !permissions.has("SPEAK"))
       return message.channel.send("I need the permissions to join and speak in your voice channel!");
 

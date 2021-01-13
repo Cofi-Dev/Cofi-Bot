@@ -49,9 +49,10 @@
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
     "moment-duration-format": "^2.3.2",
+    "opusscript": "0.0.7",
     "reflect-metadata": "^0.1.13",
     "typescript": "^3.9.5",
-    "ytdl-core": "^4.4.2"
+    "ytdl-core": "^4.4.3"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
