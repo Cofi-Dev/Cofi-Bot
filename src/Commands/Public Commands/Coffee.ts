@@ -18,8 +18,9 @@ export default class Coffee extends Command {
   }
 
   public async exec(message: Message): Promise<Message> {
+    const bot_user = this.client.user.username;
     const sent = await message.util.send(
-      new MessageEmbed().setTitle(`𝒞𝒶𝒻𝑒?`).setImage("https://i.imgur.com/ukv7zKM.jpeg")
+      new MessageEmbed().setTitle(`𝒞𝒶𝒻𝑒?`).setDescription("@everyone").setImage("https://i.imgur.com/ukv7zKM.jpeg")
     );
 
     const addReactions = (message) => {
@@ -38,9 +39,8 @@ export default class Coffee extends Command {
         {}
       );
       Object.keys(userReactions).forEach(function (key) {
-        userReactions[key].username !== "NaM-bot" && userList.push(`<@${userReactions[key].id}>`);
+        userReactions[key].username !== bot_user && userList.push(`<@${userReactions[key].id}>`);
       });
-
       return userList.length !== 0 ? userList.join(", ") : "No votos negativos";
     };
 
@@ -70,7 +70,7 @@ export default class Coffee extends Command {
 
       countVotes(upVote, downVote);
       removeReactions(sent);
-    }, 10000);
+    }, 5000);
 
     return sent;
   }
