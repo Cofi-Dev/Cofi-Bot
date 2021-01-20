@@ -70,7 +70,7 @@ export default class Coffee extends Command {
 
       countVotes(upVote, downVote);
       removeReactions(sent);
-    }, 5000);
+    }, 20000);
 
     return sent;
   }
