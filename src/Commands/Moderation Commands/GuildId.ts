@@ -1,6 +1,6 @@
-import { color } from "../../Settings";
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed } from "discord.js";
+import { color } from "../../Settings"
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed } from "discord.js"
 
 export default class GuildId extends Command {
   public constructor() {
@@ -14,7 +14,7 @@ export default class GuildId extends Command {
       },
       userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
       ratelimit: 3,
-    });
+    })
   }
 
   public async exec(message: Message): Promise<Message> {
@@ -24,6 +24,6 @@ export default class GuildId extends Command {
         value: message.guild.id,
         inline: true,
       })
-    );
+    )
   }
 }

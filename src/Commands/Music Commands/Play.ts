@@ -1,8 +1,8 @@
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed } from "discord.js";
-import { color } from "../../Settings";
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed } from "discord.js"
+import { color } from "../../Settings"
 
-const ytdl = require("ytdl-core");
+const ytdl = require("ytdl-core")
 export default class Play extends Command {
   public constructor() {
     super("play", {
@@ -21,36 +21,36 @@ export default class Play extends Command {
           match: "rest",
         },
       ],
-    });
+    })
   }
 
   public async exec(message: Message, { url }: { url: String }): Promise<Message> {
-    const voiceChannel = message.member.voice.channel;
-    if (!voiceChannel) return message.reply("Please join a voice channel first.");
-    if (!url) return message.reply("Please provide a valid url.");
+    const voiceChannel = message.member.voice.channel
+    if (!voiceChannel) return message.reply("Please join a voice channel first.")
+    if (!url) return message.reply("Please provide a valid url.")
 
-    const permissions = voiceChannel.permissionsFor(message.client.user);
+    const permissions = voiceChannel.permissionsFor(message.client.user)
     if (!permissions.has("CONNECT") || !permissions.has("SPEAK"))
-      return message.channel.send("I need the permissions to join and speak in your voice channel!");
+      return message.channel.send("I need the permissions to join and speak in your voice channel!")
 
-    const args = message.content.split(" ");
-    const songInfo = await ytdl.getInfo(args[1]);
+    const args = message.content.split(" ")
+    const songInfo = await ytdl.getInfo(args[1])
     const song = {
       title: songInfo.videoDetails.title,
       url: songInfo.videoDetails.video_url,
-    };
+    }
 
     voiceChannel.join().then((connection) => {
-      let stream = ytdl(`${url}`, { filter: "audioonly" });
-      const dispatcher = connection.play(stream);
-      dispatcher.on("finish", () => voiceChannel.leave());
-    });
+      let stream = ytdl(`${url}`, { filter: "audioonly" })
+      const dispatcher = connection.play(stream)
+      dispatcher.on("finish", () => voiceChannel.leave())
+    })
 
     return message.util.send(
       new MessageEmbed()
         .setTitle(`Now playing`)
         .setColor(color)
         .setDescription(`[${song.title}](${song.url}) [${message.author}]`)
-    );
+    )
   }
 }

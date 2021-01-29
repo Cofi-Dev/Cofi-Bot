@@ -1,5 +1,5 @@
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed } from "discord.js";
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed } from "discord.js"
 
 export default class Disconnect extends Command {
   public constructor() {
@@ -12,11 +12,11 @@ export default class Disconnect extends Command {
         examples: ["disconnect"],
       },
       ratelimit: 3,
-    });
+    })
   }
 
   public async exec(message: Message) {
-    const voiceChannel = message.member.voice.channel;
-    voiceChannel.leave();
+    const voiceChannel = message.member.voice.channel
+    voiceChannel.leave()
   }
 }

@@ -1,5 +1,5 @@
-import { token, owners } from "./Settings";
-import BotClient from "./Client/BotClient";
+import { token, owners } from "./Settings"
+import BotClient from "./Client/BotClient"
 
-const client: BotClient = new BotClient({ token, owners });
-client.start();
+const client: BotClient = new BotClient({ token, owners })
+client.start()

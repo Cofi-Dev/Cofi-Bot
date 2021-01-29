@@ -1,6 +1,6 @@
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed } from "discord.js";
-import { prefix } from "../../Settings";
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed } from "discord.js"
+import { prefix } from "../../Settings"
 
 export default class Help extends Command {
   public constructor() {
@@ -20,28 +20,28 @@ export default class Help extends Command {
           match: "rest",
         },
       ],
-    });
+    })
   }
 
   public async exec(message: Message, { command }: { command: Command }): Promise<Message> {
-    const commands = this.client.commanHandler.modules;
+    const commands = this.client.commanHandler.modules
     if (command) {
       return message.util.send(
         new MessageEmbed()
           .setTitle(`Help | ${command.description.usage} `)
           .setColor("BLUE")
           .setDescription(`${command.description.content}`)
-      );
+      )
     } else {
-      let messageEmbed = new MessageEmbed().setTitle(`Commands`).setColor("BLUE");
+      let messageEmbed = new MessageEmbed().setTitle(`Commands`).setColor("BLUE")
       commands.forEach((command) => {
         messageEmbed.addFields({
           name: `${command.aliases[0]}`,
           value: "```" + `${prefix}${command.description.usage}` + "```",
           inline: true,
-        });
-      });
-      return message.util.send(messageEmbed);
+        })
+      })
+      return message.util.send(messageEmbed)
     }
   }
 }

@@ -22,4 +22,4 @@ const colorCodeDiscord = {
   DARK_NAVY: "2899536",
   LUMINOUS_VIVID_PINK: "16580705",
   DARK_VIVID_PINK: "12320855",
-};
+}
