@@ -1,4 +1,4 @@
 export interface BotOptions {
-  token?: string;
-  owners?: string | string[];
+  token?: string
+  owners?: string | string[]
 }

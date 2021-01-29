@@ -1,4 +1,4 @@
-import moment = require("moment");
+import moment = require("moment")
 
 /**
  * This function formats a date specified in milliseconds.
@@ -10,14 +10,14 @@ import moment = require("moment");
  */
 
 export function timeFormat(ms: number, format?: String): String | Date {
-  let date;
+  let date
   switch (format) {
     case "standart":
-      date = moment(ms).format("MMMM Do YYYY, h:mm:ss a");
-      break;
+      date = moment(ms).format("MMMM Do YYYY, h:mm:ss a")
+      break
     default:
-      date = moment(ms).toDate();
-      break;
+      date = moment(ms).toDate()
+      break
   }
-  return date;
+  return date
 }

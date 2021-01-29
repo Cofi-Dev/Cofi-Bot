@@ -1,22 +1,22 @@
-import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
-import { Message } from "discord.js";
-import { BotOptions } from "../Utils/Interfaces/";
-import { join } from "path";
-import { prefix, owners } from "../Settings";
+import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo"
+import { Message } from "discord.js"
+import { BotOptions } from "../Utils/Interfaces/"
+import { join } from "path"
+import { prefix, owners } from "../Settings"
 
 declare module "discord-akairo" {
   interface AkairoClient {
-    commanHandler: CommandHandler;
-    listenerHandler: ListenerHandler;
+    commanHandler: CommandHandler
+    listenerHandler: ListenerHandler
   }
 }
 
 export default class BotClient extends AkairoClient {
-  public queue = new Map();
-  public config: BotOptions;
+  public queue = new Map()
+  public config: BotOptions
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
     directory: join(__dirname, "..", "Listeners"),
-  });
+  })
   public commanHandler: CommandHandler = new CommandHandler(this, {
     directory: join(__dirname, "..", "Commands"),
     prefix: prefix,
@@ -38,29 +38,29 @@ export default class BotClient extends AkairoClient {
       otherwise: "",
     },
     ignorePermissions: owners,
-  });
+  })
 
   public constructor(config: BotOptions) {
     super({
       ownerID: owners,
-    });
-    this.config = config;
+    })
+    this.config = config
   }
 
   private async _init(): Promise<void> {
-    this.commanHandler.useListenerHandler(this.listenerHandler);
+    this.commanHandler.useListenerHandler(this.listenerHandler)
     this.listenerHandler.setEmitters({
       commanHandler: this.commanHandler,
       listenerHandler: this.listenerHandler,
       process,
-    });
+    })
 
-    this.commanHandler.loadAll();
-    this.listenerHandler.loadAll();
+    this.commanHandler.loadAll()
+    this.listenerHandler.loadAll()
   }
 
   public async start(): Promise<string> {
-    await this._init();
-    return this.login(this.config.token);
+    await this._init()
+    return this.login(this.config.token)
   }
 }

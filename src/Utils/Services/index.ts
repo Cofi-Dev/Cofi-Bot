@@ -1,3 +1,3 @@
-export { timeFormat } from "./TimeFormat";
-export { checkUserRol } from "./CheckUserRol";
-export { checkUserPermission } from "./CheckUserPermission";
+export { timeFormat } from "./TimeFormat"
+export { checkUserRol } from "./CheckUserRol"
+export { checkUserPermission } from "./CheckUserPermission"

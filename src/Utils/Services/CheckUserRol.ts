@@ -7,13 +7,13 @@
  * @returns {String} Name or name collection of all roles that the user has.
  */
 export function checkUserRol(guildRoles: Array<String | Object | any>, rolId: Array<String>): String {
-  let allUserRoles: Array<String> = [];
-  if (rolId.length === 0) return "This user does not have any role assigned.";
+  let allUserRoles: Array<String> = []
+  if (rolId.length === 0) return "This user does not have any role assigned."
 
   rolId.forEach((role) => {
     guildRoles.forEach((guildRole) => {
-      guildRole.id === role && allUserRoles.push(guildRole.name);
-    });
-  });
-  return allUserRoles.join(",\r\n");
+      guildRole.id === role && allUserRoles.push(guildRole.name)
+    })
+  })
+  return allUserRoles.join(",\r\n")
 }

@@ -1,7 +1,7 @@
-import { color } from "../../Settings";
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed } from "discord.js";
-import { timeFormat, checkUserRol, checkUserPermission } from "../../Utils/Services";
+import { color } from "../../Settings"
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed } from "discord.js"
+import { timeFormat, checkUserRol, checkUserPermission } from "../../Utils/Services"
 
 export default class Info extends Command {
   public constructor() {
@@ -22,7 +22,7 @@ export default class Info extends Command {
           match: "rest",
         },
       ],
-    });
+    })
   }
 
   public async exec(message: Message, { member }: { member }): Promise<Message> {
@@ -69,9 +69,9 @@ export default class Info extends Command {
           )
           .setTimestamp()
           .setFooter(`Requested by ${message.author.username}`, message.author.avatarURL())
-      );
+      )
     } else {
-      return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor(color).setDescription(`Invalid user`));
+      return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor(color).setDescription(`Invalid user`))
     }
   }
 }
