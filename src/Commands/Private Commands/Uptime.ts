@@ -21,10 +21,9 @@ export default class Uptime extends Command {
   }
 
   private checkUptime(): String {
-    const readyAt = moment(this.client.readyAt.getTime())
-    const now = moment(new Date())
-
-    const ms = moment(now, "DD/MM/YYYY HH:mm:ss").diff(moment(readyAt, "DD/MM/YYYY HH:mm:ss"))
+    const ms = moment(moment(new Date()), "DD/MM/YYYY HH:mm:ss").diff(
+      moment(moment(this.client.readyAt.getTime()), "DD/MM/YYYY HH:mm:ss")
+    )
     const d = moment.duration(ms) as Duration
     return d.format("DD/MM/YYYY HH:mm:ss")
   }

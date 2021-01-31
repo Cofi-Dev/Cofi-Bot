@@ -10,6 +10,6 @@ export default class UnhandledRejection extends Listener {
   }
 
   public exec(error): void {
-    console.log(chalk.keyword("red")(`🔴 An error has occurred: ${error}`))
+    console.log(chalk.keyword("red")(`🔴 ERROR: ${error}`))
   }
 }

@@ -1,5 +1,5 @@
 const dotenv = require("dotenv")
-dotenv.config()
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 /* Bot settings */
 export const token: string = process.env.TOKEN
@@ -9,7 +9,7 @@ export const owners: string[] = []
 export const color: string = "BLUE"
 
 /* Dashboard settings */
-export const clientID: string = process.env.clientID
-export const clientSecret: string = process.env.cliendSecret
-export const redirectUri: string = process.env.redirectUri
-export const callbackUri: string = process.env.callbackUri
+export const clientID: string = process.env.CLIENT_ID
+export const clientSecret: string = process.env.CLIEN_SECRECT
+export const redirectUri: string = process.env.REDIRECT_URI
+export const callbackUrl: string = process.env.CALLBACK_URL

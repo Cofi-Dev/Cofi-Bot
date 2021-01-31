@@ -14,6 +14,7 @@ export default class ReadyListener extends Listener {
 
   public exec(): void {
     new API(this.client).start()
+    console.log(chalk.bold.rgb(10, 100, 200)(`Enviroment: ${process.env.NODE_ENV}`))
     console.log(chalk.bold.rgb(10, 100, 200)(`${this.client.user.tag}`))
     console.log(chalk.bold.rgb(10, 100, 200)(`Version: Alpha ${version}`))
     console.log(chalk.keyword("yellow")(`Ready at: ${this.client.readyAt.toLocaleString()}`))
