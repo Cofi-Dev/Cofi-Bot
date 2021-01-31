@@ -3,7 +3,7 @@ import { AkairoClient } from "discord-akairo"
 import fetch from "node-fetch"
 import session from "express-session"
 import OAuth2 from "../../Utils/Services/OAuth2"
-import { authorization, callbackUri, clientID, redirectUri, clientSecret } from "../../Settings"
+import { authorization, callbackUrl, clientID, redirectUri, clientSecret } from "../../Settings"
 
 declare module "express-session" {
   interface Session {
@@ -43,7 +43,7 @@ export default class OAuth2Router {
       return res.redirect(
         `https://discord.com/api/oauth2/authorize?
         client_id=${clientID}&
-        redirect_uri=${encodeURIComponent(callbackUri)}&
+        redirect_uri=${encodeURIComponent(callbackUrl)}&
         response_type=code&
         scope=${encodeURIComponent("identify guilds")}`
       )
@@ -66,7 +66,7 @@ export default class OAuth2Router {
           client_secret: clientSecret,
           grant_type: "authorization_code",
           code: req.query.code,
-          redirect_uri: callbackUri,
+          redirect_uri: callbackUrl,
           scope: "identify",
         }),
       })
