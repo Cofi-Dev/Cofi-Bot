@@ -1,8 +1,9 @@
 import 'mocha';
+import { server } from '../test_config'
+
 var chai = require('chai'), chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect;
-import { server } from '../test_config'
 
 describe('Guild ID', () => {
   it('Return a JSON, with the basic data of a guild', done => {
