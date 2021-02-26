@@ -1,24 +1,24 @@
-<h1 align="center">🤖 Nam-Bot 🤖</h1>
+<h1 align="center">🤖 Cofi-Bot 🤖</h1>
 <p>
- <img alt="Build" src="https://travis-ci.com/victorst79/NaM-Bot.svg?branch=master" />
+ <img alt="Build" src="https://travis-ci.com/victorst79/Cofi-Bot.svg?branch=master" />
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D6.10.0-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D12.0.0-blue.svg" />
-  <a href="https://github.com/victorst79/NaM-Bot#readme" target="_blank">
+  <a href="https://github.com/Cofi-Dev/Cofi-Bot#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/victorst79/NaM-Bot/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/Cofi-Dev/Cofi-Bot/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/victorst79/NaM-Bot/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/Cofi-Dev/Cofi-Bot/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/victorst79/Nam-Bot" />
   </a>
 </p>
 
-> NaM-Bot is a multifunctional chat bot for management and entertainment on Discord channels. <br>
+> Cofi-Bot is a multifunctional chat bot for management and entertainment on Discord channels. <br>
 > Play music, manage channels with a large number of users, establish rules for each channel, entertainment commands and more features.
 
-### 🏠 [Homepage](https://github.com/victorst79/NaM-Bot#readme)
+### 🏠 [Homepage](https://github.com/Cofi-Dev/Cofi-Bot#readme)
 
 ## Prerequisites
 
@@ -87,7 +87,7 @@ And finally, the prefix is by which the bot will take into account that what is 
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/victorst79/NaM-Bot/issues). You can also take a look at the [contributing guide](https://github.com/victorst79/NaM-Bot/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Cofi-Dev/Cofi-Bot/issues). You can also take a look at the [contributing guide](https://github.com/victorst79/NaM-Bot/blob/master/CONTRIBUTING.md).
 
 You can also contribute translations of the command feedback to include them in i18n.
 
@@ -102,4 +102,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Victor Santaella](https://github.com/victorst79).<br />
-This project is [MIT](https://github.com/victorst79/NaM-Bot/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/Cofi-Dev/Cofi-Bot/blob/master/LICENSE) licensed.

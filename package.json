@@ -1,5 +1,5 @@
 {
-  "name": "nam-bot",
+  "name": "cofi-bot",
   "version": "Alpha 0.0.1",
   "description": "Multifuctional discord bot",
   "main": "init.ts",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/victorst79/NaM-Bot.git"
+    "url": "git+https://github.com/Cofi-Dev/Cofi-Bot.git"
   },
   "author": "Victor Santaella",
   "maintainers": [
@@ -27,9 +27,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/victorst79/NaM-Bot/issues"
+    "url": "https://github.com/Cofi-Dev/Cofi-Bot/issues"
   },
-  "homepage": "https://github.com/victorst79/NaM-Bot#readme",
+  "homepage": "https://github.com/Cofi-Dev/Cofi-Bot#readme",
   "engines": {
     "npm": ">=6.10.0",
     "node": ">=12.0.0"
