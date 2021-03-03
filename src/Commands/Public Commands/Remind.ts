@@ -14,7 +14,7 @@ export default class Remind extends Command {
       ratelimit: 3,
       args: [
         {
-          id: "text",
+          id: "textNote",
           type: String,
           match: "rest",
         },
@@ -32,13 +32,7 @@ export default class Remind extends Command {
     })
   }
 
-  public async exec(message: Message, text: String): Promise<Message> {
-    return message.util.send(
-      new MessageEmbed().setTitle(`Remind`).setColor("RANDOM").addFields({
-        name: "Text",
-        value: text,
-        inline: true,
-      })
-    )
+  public async exec(message: Message, textNote: String): Promise<Message> {
+    return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor("RANDOM").setDescription(textNote))
   }
 }

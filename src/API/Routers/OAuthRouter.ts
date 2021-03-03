@@ -3,7 +3,7 @@ import { AkairoClient } from "discord-akairo"
 import fetch from "node-fetch"
 import session from "express-session"
 import OAuth2 from "../../Utils/Services/OAuth2"
-import { authorization, callbackUrl, clientID, redirectUri, clientSecret } from "../../Settings"
+import { authorization, callbackUrl, clientID, redirectUri, clientSecret, discordURL} from "../../Settings"
 
 declare module "express-session" {
   interface Session {
@@ -41,7 +41,7 @@ export default class OAuth2Router {
 
     this.router.get("/oauth/login", (req: Request, res: Response) => {
       return res.redirect(
-        `https://discord.com/api/oauth2/authorize?
+        `${discordURL}/authorize?
         client_id=${clientID}&
         redirect_uri=${encodeURIComponent(callbackUrl)}&
         response_type=code&
@@ -55,7 +55,7 @@ export default class OAuth2Router {
     })
 
     this.router.get("/oauth/callback", (req: Request, res: Response) => {
-      fetch("https://discord.com/api/oauth2/token", {
+      fetch("${discordURL}/token", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-forms-urlencoded",
