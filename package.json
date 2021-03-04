@@ -9,6 +9,8 @@
     "watch": "tsc -p tsconfig.json -w",
     "dev": "NODE_ENV=dev nodemon dist/init.js",
     "prod": "NODE_ENV=prod nodemon dist/init.js",
+    "dev_win": "set NODE_ENV=dev && nodemon dist/init.js",
+    "prod_win": "set NODE_ENV=prod && nodemon dist/init.js",
     "format": "prettier --write \"src/**/*.*(js|ts)\"",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "test-api": "mocha -r ts-node/register tests/API/*.spec.ts",
