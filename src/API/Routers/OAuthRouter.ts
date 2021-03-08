@@ -3,7 +3,7 @@ import { AkairoClient } from "discord-akairo"
 import fetch from "node-fetch"
 import session from "express-session"
 import OAuth2 from "../../Utils/Services/OAuth2"
-import { authorization, callbackUrl, clientID, redirectUri, clientSecret, discordURL} from "../../Settings"
+import { authorization, callbackUrl, clientID, redirectUri, clientSecret, discordURL } from "../../Settings"
 
 declare module "express-session" {
   interface Session {

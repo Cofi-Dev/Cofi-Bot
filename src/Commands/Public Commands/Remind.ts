@@ -32,7 +32,8 @@ export default class Remind extends Command {
     })
   }
 
-  public async exec(message: Message, textNote: String): Promise<Message> {
+  public async exec(
+    message: Message, { textNote }: { textNote: String }, ): Promise<Message> {
     return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor("RANDOM").setDescription(textNote))
   }
 }
