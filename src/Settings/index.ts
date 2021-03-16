@@ -15,4 +15,4 @@ export const redirectUri: string = process.env.REDIRECT_URI
 export const callbackUrl: string = process.env.CALLBACK_URL
 
 /* OAuth URLS */
-export const discordURL: String = 'https://discord.com/api/oauth2'
+export const discordURL: String = "https://discord.com/api/oauth2"

@@ -25,14 +25,18 @@ export default class Remind extends Command {
         },
         {
           id: "time",
-          type: String,
-          match: "rest",
+          type: Number,
+          match: "option",
+          flag: ["-time:"],
         },
       ],
     })
   }
 
-  public async exec(message: Message, textNote: String): Promise<Message> {
+  public async exec(
+    message: Message,
+    { textNote, frequency, time }: { textNote: String; frequency: String; time: number }
+  ): Promise<Message> {
     return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor("RANDOM").setDescription(textNote))
   }
 }
