@@ -2,15 +2,15 @@ import { Command } from "discord-akairo"
 import { Message, MessageEmbed } from "discord.js"
 import { color } from "../../Settings"
 
-export default class PingTeam extends Command {
+export default class PingChannel extends Command {
   public constructor() {
-    super("pingteam", {
-      aliases: ["pingteam"],
+    super("pingChannel", {
+      aliases: ["pingChannel"],
       category: "Public Commands",
       description: {
         content: "Ping all team",
-        usage: "pingteam",
-        examples: ["pingteam"],
+        usage: "pingChannel",
+        examples: ["pingChannel"],
       },
       ratelimit: 3,
     })
