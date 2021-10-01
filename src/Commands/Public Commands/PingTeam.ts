@@ -2,15 +2,15 @@ import { Command } from "discord-akairo"
 import { Message, MessageEmbed } from "discord.js"
 import { color } from "../../Settings"
 
-export default class Posture extends Command {
+export default class PingTeam extends Command {
   public constructor() {
-    super("posture", {
-      aliases: ["posture", "postura", "fixposture"],
+    super("pingteam", {
+      aliases: ["pingteam"],
       category: "Public Commands",
       description: {
-        content: "Friendly reminder to improve chair posture.",
-        usage: "posture",
-        examples: ["posture"],
+        content: "Ping all team",
+        usage: "pingteam",
+        examples: ["pingteam"],
       },
       ratelimit: 3,
     })
@@ -18,7 +18,7 @@ export default class Posture extends Command {
 
   public async exec(message: Message): Promise<Message> {
     return await message.util.send(
-      new MessageEmbed().setTitle(`REMEMBER`).setDescription("@everyone fix ur posture").setColor(color)
+      new MessageEmbed().setTitle(`Ping Channel`).setDescription("@everyone ping").setColor(color)
     )
   }
 }
