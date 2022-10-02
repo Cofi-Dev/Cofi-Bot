@@ -15,7 +15,7 @@ export default class Uptime extends Command {
         usage: "uptime",
         examples: ["uptime"],
       },
-      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
+      userPermissions: ["Administrator", "ManageGuild"],
       ratelimit: 3,
     })
   }
