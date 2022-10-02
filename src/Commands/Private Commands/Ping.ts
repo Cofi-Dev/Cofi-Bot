@@ -11,7 +11,7 @@ export default class Ping extends Command {
         usage: "ping",
         examples: ["ping"],
       },
-      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
+      userPermissions: ["Administrator", "ManageGuild"],
       ratelimit: 3,
     })
   }
@@ -27,7 +27,7 @@ export default class Ping extends Command {
           { name: "🔂 **RTT**", value: `${timeDiff} ms`, inline: true },
           {
             name: "💟 **Heartbeat**",
-            value: `${Math.round(this.client.ws.ping)} ms`,
+            value: `${Math.round(this.client?.ws?.ping)} ms`,
             inline: true,
           }
         )
