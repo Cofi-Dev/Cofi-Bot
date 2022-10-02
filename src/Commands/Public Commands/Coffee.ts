@@ -1,7 +1,5 @@
 import { Command } from "discord-akairo"
-import { MessageReaction } from "discord.js"
-import { Message, MessageEmbed, ReactionCollector } from "discord.js"
-import { color } from "../../Settings"
+import { MessageReaction, Message, EmbedBuilder } from "discord.js"
 
 export default class Coffee extends Command {
   public constructor() {
@@ -20,7 +18,7 @@ export default class Coffee extends Command {
   public async exec(message: Message): Promise<Message> {
     const bot_user = this.client.user.username
     const sent = await message.util.send(
-      new MessageEmbed().setTitle(`𝒞𝒶𝒻𝑒?`).setDescription("@everyone").setImage("https://i.imgur.com/ukv7zKM.jpeg")
+      new EmbedBuilder().setTitle(`𝒞𝒶𝒻𝑒?`).setDescription("@everyone").setImage("https://i.imgur.com/ukv7zKM.jpeg")
     )
 
     const addReactions = (message) => {
@@ -45,7 +43,7 @@ export default class Coffee extends Command {
     }
 
     const countVotes = (upVote: MessageReaction, downVote: MessageReaction) => {
-      const finalMessage = new MessageEmbed().setTitle(`𝒞𝒶𝒻𝑒?`).setColor(color)
+      const finalMessage = new EmbedBuilder().setTitle(`𝒞𝒶𝒻𝑒?`).setColor("Blue")
 
       if (downVote.count > upVote.count) {
         return message.util.send(
