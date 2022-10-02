@@ -11,7 +11,7 @@ export default class Ping extends Command {
         usage: "version",
         examples: ["version"],
       },
-      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
+      userPermissions: ["Administrator", "ManageGuild"],
       ratelimit: 3,
     })
   }
