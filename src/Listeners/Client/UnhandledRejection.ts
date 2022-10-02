@@ -1,5 +1,5 @@
 import { Listener } from "discord-akairo"
-const chalk = require("chalk")
+import chalk from "chalk"
 
 export default class UnhandledRejection extends Listener {
   constructor() {

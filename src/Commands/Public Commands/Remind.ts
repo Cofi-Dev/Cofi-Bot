@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo"
-import { Message, MessageEmbed } from "discord.js"
+import { Message, EmbedBuilder } from "discord.js"
 
 export default class Remind extends Command {
   public constructor() {
@@ -35,8 +35,8 @@ export default class Remind extends Command {
 
   public async exec(
     message: Message,
-    { textNote, frequency, time }: { textNote: String; frequency: String; time: number }
+    { textNote, frequency, time }: { textNote: string; frequency: string; time: number }
   ): Promise<Message> {
-    return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor("RANDOM").setDescription(textNote))
+    return message.util.send(new EmbedBuilder().setTitle(`User Info`).setColor("RANDOM").setDescription(textNote))
   }
 }

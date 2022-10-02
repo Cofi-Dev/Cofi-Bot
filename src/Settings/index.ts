@@ -6,7 +6,7 @@ export const token: string = process.env.TOKEN
 export const authorization: string = process.env.API_TOKEN
 export const prefix: string = process.env.PREFIX ? process.env.PREFIX : "!"
 export const owners: string[] = []
-export const color: string = "BLUE"
+export const color: string = "Blue"
 
 /* Dashboard settings */
 export const clientID: string = process.env.CLIENT_ID
