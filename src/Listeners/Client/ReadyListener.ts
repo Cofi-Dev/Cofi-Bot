@@ -1,6 +1,6 @@
 import { Listener } from "discord-akairo"
 import API from "../../API/API"
-const chalk = require("chalk")
+import chalk from "chalk"
 const { version } = require("../../../package.json")
 
 export default class ReadyListener extends Listener {

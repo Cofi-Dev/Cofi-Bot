@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo"
-import { Message, MessageEmbed } from "discord.js"
+import { Message, EmbedBuilder } from "discord.js"
 import { color } from "../../Settings"
 
 export default class Posture extends Command {
@@ -18,7 +18,7 @@ export default class Posture extends Command {
 
   public async exec(message: Message): Promise<Message> {
     return await message.util.send(
-      new MessageEmbed().setTitle(`REMEMBER`).setDescription("@everyone fix ur posture").setColor(color)
+      new EmbedBuilder().setTitle(`REMEMBER`).setDescription("@everyone fix ur posture").setColor(color)
     )
   }
 }
