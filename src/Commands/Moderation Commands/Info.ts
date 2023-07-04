@@ -1,6 +1,6 @@
 import { color } from "../../Settings"
 import { Command } from "discord-akairo"
-import { Message, MessageEmbed } from "discord.js"
+import { Message, EmbedBuilder } from "discord.js"
 import { timeFormat, checkUserRol, checkUserPermission } from "../../Utils/Services"
 
 export default class Info extends Command {
@@ -13,7 +13,7 @@ export default class Info extends Command {
         usage: "info [@member]",
         examples: ["info"],
       },
-      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
+      userPermissions: ["Administrator", "ManageGuild"],
       ratelimit: 3,
       args: [
         {
@@ -71,7 +71,7 @@ export default class Info extends Command {
           .setFooter(`Requested by ${message.author.username}`, message.author.avatarURL())
       )
     } else {
-      return message.util.send(new MessageEmbed().setTitle(`User Info`).setColor(color).setDescription(`Invalid user`))
+      return message.util.send(new EmbedBuilder().setTitle(`User Info`).setColor("Blue").setDescription(`Invalid user`))
     }
   }
 }

@@ -1,6 +1,6 @@
 import moment from "moment"
 import { Command } from "discord-akairo"
-import { Message, MessageEmbed } from "discord.js"
+import { Message, EmbedBuilder } from "discord.js"
 
 export default class Now extends Command {
   public constructor() {
@@ -18,7 +18,7 @@ export default class Now extends Command {
 
   public async exec(message: Message): Promise<Message> {
     return await message.util.send(
-      new MessageEmbed().setTitle(`Your random color is`).setDescription('#'+Math.random().toString(16).substr(2,6)
+      new EmbedBuilder().setTitle(`Your random color is`).setDescription('#'+Math.random().toString(16).substr(2,6)
     )
   }
 }

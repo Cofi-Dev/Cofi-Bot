@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo"
-import { Message, MessageEmbed } from "discord.js"
+import { Message, EmbedBuilder } from "discord.js"
 import { color } from "../../Settings"
 import moment from "moment"
 import "moment-duration-format"
@@ -15,7 +15,7 @@ export default class Uptime extends Command {
         usage: "uptime",
         examples: ["uptime"],
       },
-      userPermissions: ["ADMINISTRATOR", "MANAGE_GUILD"],
+      userPermissions: ["Administrator", "ManageGuild"],
       ratelimit: 3,
     })
   }
@@ -30,7 +30,7 @@ export default class Uptime extends Command {
 
   public exec(message: Message): Promise<Message> {
     return message.util.send(
-      new MessageEmbed().setTitle(`🕓 Bot Uptime`).setColor(color).setDescription(`${this.checkUptime()}`)
+      new EmbedBuilder().setTitle(`🕓 Bot Uptime`).setColor(color).setDescription(`${this.checkUptime()}`)
     )
   }
 }

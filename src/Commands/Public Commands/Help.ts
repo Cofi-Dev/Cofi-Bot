@@ -1,5 +1,5 @@
 import { Command } from "discord-akairo"
-import { Message, MessageEmbed } from "discord.js"
+import { Message, EmbedBuilder } from "discord.js"
 import { prefix } from "../../Settings"
 
 export default class Help extends Command {
@@ -27,13 +27,13 @@ export default class Help extends Command {
     const commands = this.client.commanHandler.modules
     if (command) {
       return message.util.send(
-        new MessageEmbed()
+        new EmbedBuilder()
           .setTitle(`Help | ${command.description.usage} `)
-          .setColor("BLUE")
+          .setColor("Blue")
           .setDescription(`${command.description.content}`)
       )
     } else {
-      let messageEmbed = new MessageEmbed().setTitle(`Commands`).setColor("BLUE")
+      let messageEmbed = new EmbedBuilder().setTitle(`Commands`).setColor("Blue")
       commands.forEach((command) => {
         messageEmbed.addFields({
           name: `${command.aliases[0]}`,
